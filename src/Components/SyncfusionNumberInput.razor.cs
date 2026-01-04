@@ -1,47 +1,46 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Globalization;
 
-namespace Orbyss.Blazor.Syncfusion.JsonForms.Components
+namespace Orbyss.Blazor.Syncfusion.JsonForms.Components;
+
+public partial class SyncfusionNumberInput
 {
-    public partial class SyncfusionNumberInput
+    private readonly string id = $"{Guid.NewGuid()}";
+
+    [Parameter]
+    public bool Disabled { get; set; }
+
+    [Parameter]
+    public bool ReadOnly { get; set; }
+
+    [Parameter]
+    public string? Label { get; set; }
+
+    [Parameter]
+    public string? Value { get; set; }
+
+    [Parameter]
+    public CultureInfo? Culture { get; set; }
+
+    [Parameter]
+    public bool Clearable { get; set; }
+
+    [Parameter]
+    public string? HelperText { get; set; }
+
+    [Parameter]
+    public EventCallback<double?> OnValueChanged { get; set; }
+
+    [Parameter]
+    public string? Width { get; set; }
+
+    private Task OnValueChangedHandler(string? value)
     {
-        private readonly string id = $"{Guid.NewGuid()}";
-
-        [Parameter]
-        public bool Disabled { get; set; }
-
-        [Parameter]
-        public bool ReadOnly { get; set; }
-
-        [Parameter]
-        public string? Label { get; set; }
-
-        [Parameter]
-        public string? Value { get; set; }
-
-        [Parameter]
-        public CultureInfo? Culture { get; set; }
-
-        [Parameter]
-        public bool Clearable { get; set; }
-
-        [Parameter]
-        public string? HelperText { get; set; }
-
-        [Parameter]
-        public EventCallback<double?> OnValueChanged { get; set; }
-
-        [Parameter]
-        public string? Width { get; set; }
-
-        private Task OnValueChangedHandler(string? value)
+        if (double.TryParse(value, Culture, out var doubleValue))
         {
-            if (double.TryParse(value, Culture, out var doubleValue))
-            {
-                return OnValueChanged.InvokeAsync(doubleValue);
-            }
-
-            return OnValueChanged.InvokeAsync(null);
+            return OnValueChanged.InvokeAsync(doubleValue);
         }
+
+        return OnValueChanged.InvokeAsync(null);
     }
 }

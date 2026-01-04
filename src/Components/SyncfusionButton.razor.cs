@@ -2,54 +2,53 @@
 using Microsoft.AspNetCore.Components.Web;
 using Syncfusion.Blazor.Buttons;
 
-namespace Orbyss.Blazor.Syncfusion.JsonForms.Components
+namespace Orbyss.Blazor.Syncfusion.JsonForms.Components;
+
+public partial class SyncfusionButton
 {
-    public partial class SyncfusionButton
+    [Parameter]
+    public string Text { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Class { get; set; } = string.Empty;
+
+    [Parameter]
+    public string IconClass { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Style { get; set; } = string.Empty;
+
+    [Parameter]
+    public IconPosition IconPosition { get; set; }
+
+    [Parameter]
+    public bool CanToggle { get; set; }
+
+    [Parameter]
+    public bool Disabled { get; set; }
+
+    [Parameter]
+    public EventCallback OnClicked { get; set; }
+
+    private Task Click(MouseEventArgs args)
     {
-        [Parameter]
-        public string Text { get; set; } = string.Empty;
+        return OnClicked.InvokeAsync();
+    }
 
-        [Parameter]
-        public string Class { get; set; } = string.Empty;
+    private readonly Dictionary<string, object> customAttributes = [];
 
-        [Parameter]
-        public string IconClass { get; set; } = string.Empty;
-
-        [Parameter]
-        public string Style { get; set; } = string.Empty;
-
-        [Parameter]
-        public IconPosition IconPosition { get; set; }
-
-        [Parameter]
-        public bool CanToggle { get; set; }
-
-        [Parameter]
-        public bool Disabled { get; set; }
-
-        [Parameter]
-        public EventCallback OnClicked { get; set; }
-
-        private Task Click(MouseEventArgs args)
+    protected override void OnInitialized()
+    {
+        if (!string.IsNullOrWhiteSpace(IconClass) && Class?.Contains("e-icon-btn") != true)
         {
-            return OnClicked.InvokeAsync();
+            Class = $"e-icon-btn {Class}".TrimEnd(' ');
         }
 
-        private readonly Dictionary<string, object> customAttributes = [];
-
-        protected override void OnInitialized()
+        if (!string.IsNullOrWhiteSpace(Style))
         {
-            if (!string.IsNullOrWhiteSpace(IconClass) && Class?.Contains("e-icon-btn") != true)
-            {
-                Class = $"e-icon-btn {Class}".TrimEnd(' ');
-            }
-
-            if (!string.IsNullOrWhiteSpace(Style))
-            {
-                customAttributes.Add("style", Style);
-            }
-
-            base.OnInitialized();
+            customAttributes.Add("style", Style);
         }
+
+        base.OnInitialized();
     }
 }

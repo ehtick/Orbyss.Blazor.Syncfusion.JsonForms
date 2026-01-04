@@ -1,18 +1,17 @@
 ﻿using Orbyss.Blazor.JsonForms.ComponentInstances;
 using Orbyss.Blazor.Syncfusion.JsonForms.Components;
 
-namespace Orbyss.Blazor.Syncfusion.JsonForms.ComponentInstances
-{
-    public sealed class SyncfusionRowInstance : FormComponentInstance<SyncfusionRow>
-    {
-        public bool WrapChildContentInColumn { get; set; }
+namespace Orbyss.Blazor.Syncfusion.JsonForms.ComponentInstances;
 
-        protected override IDictionary<string, object?> GetParametersCore()
+public sealed class SyncfusionRowInstance : FormComponentInstance<SyncfusionRow>
+{
+    public bool WrapChildContentInColumn { get; set; }
+
+    protected override IDictionary<string, object?> GetParametersCore()
+    {
+        return new Dictionary<string, object?>
         {
-            return new Dictionary<string, object?>
-            {
-                [nameof(WrapChildContentInColumn)] = WrapChildContentInColumn
-            };
-        }
+            [nameof(WrapChildContentInColumn)] = WrapChildContentInColumn
+        };
     }
 }

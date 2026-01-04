@@ -1,9 +1,8 @@
-﻿namespace Orbyss.Blazor.Syncfusion.JsonForms
+﻿namespace Orbyss.Blazor.Syncfusion.JsonForms;
+
+public enum FormType
 {
-    public enum FormType
-    {
-        Submit,
-        Add,
-        Update
-    }
+    Submit,
+    Add,
+    Update
 }

@@ -1,20 +1,19 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Orbyss.Blazor.JsonForms.Context.Interfaces;
 
-namespace Orbyss.Blazor.Syncfusion.JsonForms.Components
+namespace Orbyss.Blazor.Syncfusion.JsonForms.Components;
+
+public partial class SyncfusionFormListItem
 {
-    public partial class SyncfusionFormListItem
-    {
-        [Parameter]
-        public RenderFragment? ChildContent { get; set; }
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
 
-        [Parameter]
-        public EventCallback OnRemoveClicked { get; set; }
+    [Parameter]
+    public EventCallback OnRemoveClicked { get; set; }
 
-        [CascadingParameter]
-        public IJsonFormContext? FormContext { get; set; }
+    [CascadingParameter]
+    public IJsonFormContext? FormContext { get; set; }
 
-        [Parameter]
-        public bool ReadOnly { get; set; }
-    }
+    [Parameter]
+    public bool ReadOnly { get; set; }
 }
