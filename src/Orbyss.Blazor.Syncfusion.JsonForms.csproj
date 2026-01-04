@@ -50,7 +50,7 @@
 
 	<ItemGroup>
 
-		<PackageReference Include="Orbyss.Blazor.JsonForms" Version="1.1.0" />
+		<PackageReference Include="Orbyss.Blazor.JsonForms" Version="1.1.1" />
 
 		<PackageReference Include="Syncfusion.Blazor.Buttons" Version="32.1.21" />
 		<PackageReference Include="Syncfusion.Blazor.Calendars" Version="32.1.21" />
