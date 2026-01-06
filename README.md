@@ -32,13 +32,39 @@ All form controls are implemented using Syncfusion Blazor components:
 
 ## 🚀 Quickstart
 
+#### Syncfusion dependency
+This library uses Syncfusion Blazor components internally. This package is built and tested against Syncfusion.Blazor 32.1.x.
+
+#### Recommended (simplest)
+Reference the Syncfusion Blazor bundle in .csproj. This includes all required Syncfusion components:
+```xml
+<PackageReference Include="Syncfusion.Blazor" Version="32.1.*" />
+```
+
+#### Advanced usage
+If you prefer per-component packages, reference the required ones instead:
+```xml
+<PackageReference Include="Syncfusion.Blazor.Buttons" Version="32.1.*" />
+<PackageReference Include="Syncfusion.Blazor.Calendars" Version="32.1.*" />
+<PackageReference Include="Syncfusion.Blazor.DropDowns" Version="32.1.*" />
+<PackageReference Include="Syncfusion.Blazor.Grid" Version="32.1.*" />
+<PackageReference Include="Syncfusion.Blazor.Inputs" Version="32.1.*" />
+<PackageReference Include="Syncfusion.Blazor.Navigations" Version="32.1.*" />
+<PackageReference Include="Syncfusion.Blazor.SplitButtons" Version="32.1.*" />
+<PackageReference Include="Syncfusion.Blazor.Themes" Version="32.1.*" />
+```
+Then add `Orbyss.Blazor.Syncfusion.JsonForms`
 ```bash
 dotnet add package Orbyss.Blazor.Syncfusion.JsonForms
 ```
 
 Then in Program.cs:
 ``` csharp
-builder.AddSyncfusionJsonForms()
+// Register Syncfusion Blazor Core services
+builder.Services.AddSyncfusionBlazor();
+
+// Register Syncfusion JSON Forms
+builder.Services.AddSyncfusionJsonForms();
 ```
 
 Then finally you can define the JsonForm Blazor component as follows:
