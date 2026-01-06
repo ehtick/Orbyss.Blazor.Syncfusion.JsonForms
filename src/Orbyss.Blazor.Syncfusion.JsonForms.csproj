@@ -52,14 +52,14 @@
 
 		<PackageReference Include="Orbyss.Blazor.JsonForms" Version="1.1.1" />
 
-		<PackageReference Include="Syncfusion.Blazor.Buttons" Version="32.1.22" />
-		<PackageReference Include="Syncfusion.Blazor.Calendars" Version="32.1.22" />
-		<PackageReference Include="Syncfusion.Blazor.DropDowns" Version="32.1.22" />
-		<PackageReference Include="Syncfusion.Blazor.Grid" Version="32.1.22" />
-		<PackageReference Include="Syncfusion.Blazor.Inputs" Version="32.1.22" />
-		<PackageReference Include="Syncfusion.Blazor.Navigations" Version="32.1.22" />
-		<PackageReference Include="Syncfusion.Blazor.SplitButtons" Version="32.1.22" />
-		<PackageReference Include="Syncfusion.Blazor.Themes" Version="32.1.22" />
+		<PackageReference Include="Syncfusion.Blazor.Buttons" Version="32.1.22" PrivateAssets="all"/>
+		<PackageReference Include="Syncfusion.Blazor.Calendars" Version="32.1.22" PrivateAssets="all"/>
+		<PackageReference Include="Syncfusion.Blazor.DropDowns" Version="32.1.22" PrivateAssets="all"/>
+		<PackageReference Include="Syncfusion.Blazor.Grid" Version="32.1.22" PrivateAssets="all"/>
+		<PackageReference Include="Syncfusion.Blazor.Inputs" Version="32.1.22" PrivateAssets="all"/>
+		<PackageReference Include="Syncfusion.Blazor.Navigations" Version="32.1.22" PrivateAssets="all"/>
+		<PackageReference Include="Syncfusion.Blazor.SplitButtons" Version="32.1.22" PrivateAssets="all"/>
+		<PackageReference Include="Syncfusion.Blazor.Themes" Version="32.1.22" PrivateAssets="all"/>
 	</ItemGroup>
 
 </Project>
