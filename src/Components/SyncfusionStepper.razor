@@ -43,10 +43,13 @@
                     </SyncfusionColumn>
                 }
                 @if (currentStep == lastStep)
-                {
-                    <SyncfusionColumn Class="form-fixed-column">
-                        <DynamicComponent Type="@(submitButton.ComponentType)" Parameters="@(GetSubmitButtonParameters())" />
-                    </SyncfusionColumn>
+                {                    
+                    @if (!HideSubmitButton)
+                    {
+                        <SyncfusionColumn Class="form-fixed-column">
+                            <DynamicComponent Type="@(submitButton.ComponentType)" Parameters="@(GetSubmitButtonParameters())" />
+                        </SyncfusionColumn>                        
+                    }
                 }
                 else
                 {
@@ -77,6 +80,9 @@
 
     [Parameter]
     public EventCallback OnSubmitClicked { get; set; }
+
+    [Parameter]
+    public bool HideSubmitButton { get; set; }
 
     [Parameter]
     public SyncfusionStepperAnimationSettings? AnimationSettings { get; set; }

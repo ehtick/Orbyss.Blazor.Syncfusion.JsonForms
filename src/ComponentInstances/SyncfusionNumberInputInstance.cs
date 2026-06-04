@@ -16,7 +16,7 @@ public sealed class SyncfusionNumberInputInstance : InputFormComponentInstanceBa
     {
         if (double.TryParse($"{value}", Culture, out var doubleValue))
         {
-            return doubleValue;
+            return doubleValue.ToString(Culture);
         }
 
         return null;
